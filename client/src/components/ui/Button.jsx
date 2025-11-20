@@ -1,21 +1,22 @@
 import { forwardRef } from 'react'
 import clsx from 'clsx'
+import './Button.css'
 
 const variants = {
-  primary: 'btn-primary shadow-lg',
-  secondary: 'btn-secondary',
-  ghost: 'btn-ghost',
-  accent: 'btn-accent',
+  primary: 'ui-button--primary',
+  secondary: 'ui-button--secondary',
+  ghost: 'ui-button--ghost',
+  accent: 'ui-button--accent',
 }
 
 const sizes = {
-  sm: 'btn-sm',
-  md: 'btn-md',
-  lg: 'btn-lg',
+  sm: 'ui-button--sm',
+  md: 'ui-button--md',
+  lg: 'ui-button--lg',
 }
 
 const Button = forwardRef(function Button({ variant = 'primary', size = 'md', className, disabled, children, ...props }, ref) {
-  const cn = clsx('btn', sizes[size], variants[variant], className)
+  const cn = clsx('ui-button', sizes[size], variants[variant], className)
   return (
     <button ref={ref} className={cn} disabled={disabled} {...props}>
       {children}

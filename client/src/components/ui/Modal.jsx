@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import './Modal.css'
 
 export default function Modal({ open, onClose, title, children, dark }) {
   useEffect(() => {
@@ -10,9 +11,9 @@ export default function Modal({ open, onClose, title, children, dark }) {
   if (!open) return null
 
   return (
-    <div className={dark ? 'modal-dark' : 'modal'}>
-      <div role="dialog" aria-modal="true" className={dark ? 'modal-content-dark' : 'modal-content'}>
-        {title && <h3 className={dark ? 'modal-title-dark' : 'modal-title'}>{title}</h3>}
+    <div className={dark ? 'ui-modal ui-modal--dark' : 'ui-modal'}>
+      <div role="dialog" aria-modal="true" className={dark ? 'ui-modal__content ui-modal__content--dark' : 'ui-modal__content'}>
+        {title && <h3 className={dark ? 'ui-modal__title ui-modal__title--dark' : 'ui-modal__title'}>{title}</h3>}
         {children}
       </div>
     </div>
